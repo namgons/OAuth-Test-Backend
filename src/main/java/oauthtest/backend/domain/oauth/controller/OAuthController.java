@@ -22,7 +22,7 @@ public class OAuthController {
         String redirectUrl = oauthService.getAuthCodeRequestUrl(oauthServerType);
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(URI.create(redirectUrl));
-        return new ResponseEntity<>(headers, HttpStatus.MOVED_PERMANENTLY);
+        return ResponseEntity.status(HttpStatus.MOVED_PERMANENTLY).headers(headers).build();
     }
 
     @GetMapping("/{oauthServerType}/login")
