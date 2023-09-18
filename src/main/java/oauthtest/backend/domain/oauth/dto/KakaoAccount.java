@@ -1,10 +1,15 @@
 package oauthtest.backend.domain.oauth.dto;
 
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
 
+import static com.fasterxml.jackson.databind.PropertyNamingStrategies.*;
+
 @Getter
+@JsonNaming(SnakeCaseStrategy.class)
 class KakaoAccount {
     private boolean profileNeedsAgreement;
     private boolean profileNicknameNeedsAgreement;
@@ -33,6 +38,7 @@ class KakaoAccount {
 }
 
 @Getter
+@JsonNaming(SnakeCaseStrategy.class)
 class Profile {
     private String nickname;
     private String thumbnailImageUrl;

@@ -1,8 +1,14 @@
 package oauthtest.backend.domain.oauth.dto;
 
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.Getter;
+import lombok.ToString;
+
+import static com.fasterxml.jackson.databind.PropertyNamingStrategies.*;
 
 @Getter
+@ToString
+@JsonNaming(SnakeCaseStrategy.class)
 public class KakaoToken {
 
     private String tokenType;

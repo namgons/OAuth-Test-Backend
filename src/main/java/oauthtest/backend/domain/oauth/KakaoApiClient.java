@@ -2,6 +2,7 @@ package oauthtest.backend.domain.oauth;
 
 import oauthtest.backend.domain.oauth.dto.KakaoMemberResponse;
 import oauthtest.backend.domain.oauth.dto.KakaoToken;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -52,8 +53,6 @@ public class KakaoApiClient {
     public KakaoMemberResponse fetchMember(String bearerToken) {
         WebClient kakaoUserDetailClient = getKakaoClient(KAKAO_USER_URL);
 
-        System.out.println("bearerToken = " + bearerToken);
-
         KakaoMemberResponse kakaoMemberResponse = kakaoUserDetailClient.get()
                 .header("Authorization", "Bearer " + bearerToken)
                 .header("Content-type", "application/x-www-form-urlencoded;charset=utf-8")
@@ -62,7 +61,7 @@ public class KakaoApiClient {
                 .block();
 
         if (kakaoMemberResponse == null) {
-//            throw new GlobalRuntimeException("카카오 사용자 정보를 받아오지 못함", HttpStatus.BAD_REQUEST);
+            throw new RuntimeException("카카오 사용자 정보를 받아오지 못함");
         }
 
         return kakaoMemberResponse;
