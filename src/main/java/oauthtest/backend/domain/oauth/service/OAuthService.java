@@ -1,8 +1,8 @@
 package oauthtest.backend.domain.oauth.service;
 
 import lombok.RequiredArgsConstructor;
-import oauthtest.backend.domain.oauth.AuthCodeRequestUrlProviderComposite;
-import oauthtest.backend.domain.oauth.OAuthMemberClientComposite;
+import oauthtest.backend.domain.oauth.composite.AuthCodeRequestUrlProviderComposite;
+import oauthtest.backend.domain.oauth.composite.OAuthMemberClientComposite;
 import oauthtest.backend.domain.oauth.entity.OAuthMember;
 import oauthtest.backend.domain.oauth.repository.OAuthMemberRepository;
 import oauthtest.backend.domain.oauth.utils.OAuthServerType;

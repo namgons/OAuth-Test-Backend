@@ -1,5 +1,6 @@
-package oauthtest.backend.domain.oauth;
+package oauthtest.backend.domain.oauth.composite;
 
+import oauthtest.backend.domain.oauth.utils.OAuthMemberClient;
 import oauthtest.backend.domain.oauth.entity.OAuthMember;
 import oauthtest.backend.domain.oauth.utils.OAuthServerType;
 import org.springframework.stereotype.Component;

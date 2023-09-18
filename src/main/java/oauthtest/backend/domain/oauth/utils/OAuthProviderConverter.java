@@ -1,4 +1,4 @@
-package oauthtest.backend.domain.oauth;
+package oauthtest.backend.domain.oauth.utils;
 
 
 import oauthtest.backend.domain.oauth.utils.OAuthServerType;

@@ -1,10 +1,9 @@
-package oauthtest.backend.domain.oauth;
+package oauthtest.backend.domain.oauth.utils;
 
 import lombok.RequiredArgsConstructor;
 import oauthtest.backend.domain.oauth.dto.KakaoMemberResponse;
 import oauthtest.backend.domain.oauth.dto.KakaoToken;
 import oauthtest.backend.domain.oauth.entity.OAuthMember;
-import oauthtest.backend.domain.oauth.utils.OAuthServerType;
 import oauthtest.backend.global.config.KakaoOAuthConfig;
 import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;

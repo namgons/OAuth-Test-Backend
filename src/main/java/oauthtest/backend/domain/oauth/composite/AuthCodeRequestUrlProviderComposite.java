@@ -1,6 +1,7 @@
-package oauthtest.backend.domain.oauth;
+package oauthtest.backend.domain.oauth.composite;
 
 
+import oauthtest.backend.domain.oauth.utils.AuthCodeRequestUrlProvider;
 import oauthtest.backend.domain.oauth.utils.OAuthServerType;
 import org.springframework.stereotype.Component;
 

@@ -1,7 +1,7 @@
 package oauthtest.backend.global.config;
 
 import lombok.RequiredArgsConstructor;
-import oauthtest.backend.domain.oauth.OAuthProviderConverter;
+import oauthtest.backend.domain.oauth.utils.OAuthProviderConverter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.http.HttpMethod;
