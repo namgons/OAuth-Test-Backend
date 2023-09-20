@@ -13,3 +13,5 @@
     client_secret: # Client Secret 키
     scope: profile_nickname, profile_image
   ```
+
+> 이 [블로그](https://ttl-blog.tistory.com/1434)를 참고하여 작성했습니다.
