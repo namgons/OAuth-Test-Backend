@@ -1,6 +1,7 @@
 package oauthtest.backend.domain.oauth.controller;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import oauthtest.backend.domain.oauth.service.OAuthService;
 import oauthtest.backend.domain.oauth.utils.OAuthServerType;
 import org.springframework.http.HttpHeaders;
@@ -13,6 +14,7 @@ import java.net.URI;
 @RequiredArgsConstructor
 @RequestMapping("/oauth")
 @RestController
+@Slf4j
 public class OAuthController {
 
     private final OAuthService oauthService;
@@ -26,11 +28,13 @@ public class OAuthController {
     }
 
     @GetMapping("/{oauthServerType}/login")
-    ResponseEntity<Long> login(
+    ResponseEntity<String> login(
             @PathVariable OAuthServerType oauthServerType,
             @RequestParam("code") String code) {
-        System.out.println(oauthServerType);
-        Long login = oauthService.login(oauthServerType, code);
-        return ResponseEntity.ok(login);
+        String jwtToken = oauthService.login(oauthServerType, code);
+
+        log.info("토큰 : {}", jwtToken);
+        
+        return ResponseEntity.ok(jwtToken);
     }
 }

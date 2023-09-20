@@ -9,6 +9,7 @@ import javax.persistence.*;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@ToString
 @Table(name = "oauth_member",
         uniqueConstraints = {
                 @UniqueConstraint(
